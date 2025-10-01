@@ -1,0 +1,216 @@
+[2025-10-01 10:05:25] MySQL connection successful
+[2025-10-01 10:05:25] MongoDB connection successful
+[2025-10-01 10:05:34] MySQL connection successful
+[2025-10-01 10:05:34] MongoDB connection successful
+[2025-10-01 10:05:48] MongoDB get_client successful
+[2025-10-01 10:05:48] MySQL get_connection successful
+[2025-10-01 10:05:53] MySQL get_connection successful
+[2025-10-01 10:06:09] MongoDB get_client successful
+[2025-10-01 10:06:09] MySQL get_connection successful
+[2025-10-01 10:06:13] MongoDB get_client successful
+[2025-10-01 10:06:16] MongoDB get_client successful
+[2025-10-01 10:08:30] MySQL connection successful
+[2025-10-01 10:08:30] MongoDB connection successful
+[2025-10-01 10:40:55] MySQL connection successful
+[2025-10-01 10:40:58] MongoDB connection failed: localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 3.0s, Topology Description: <TopologyDescription id: 68dce917458f0abc9e40c4bb, topology_type: Unknown, servers: [<ServerDescription ('localhost', 9999) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 10:41:25] MySQL connection successful
+[2025-10-01 10:41:28] MongoDB connection failed: localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 3.0s, Topology Description: <TopologyDescription id: 68dce93526f2b426fd329b40, topology_type: Unknown, servers: [<ServerDescription ('localhost', 9999) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 10:43:32] MongoDB get_client failed: localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68dce99626f2b426fd329b41, topology_type: Unknown, servers: [<ServerDescription ('localhost', 9999) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 10:43:32] MySQL get_connection successful
+[2025-10-01 10:44:10] MySQL get_connection successful
+[2025-10-01 10:44:49] MongoDB get_client failed: localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68dce9e326f2b426fd329b42, topology_type: Unknown, servers: [<ServerDescription ('localhost', 9999) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:9999: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 10:44:49] MySQL get_connection successful
+[2025-10-01 10:47:30] MySQL connection successful
+[2025-10-01 10:47:31] MongoDB connection successful
+[2025-10-01 10:47:40] MongoDB get_client successful
+[2025-10-01 10:47:40] MySQL get_connection successful
+[2025-10-01 10:47:44] MySQL get_connection successful
+[2025-10-01 10:47:54] MongoDB get_client successful
+[2025-10-01 10:47:54] MySQL get_connection successful
+[2025-10-01 10:48:00] MongoDB get_client successful
+[2025-10-01 10:48:04] MongoDB get_client successful
+[2025-10-01 10:51:49] MySQL connection failed: (1045, "Access denied for user 'ich1'@'dynamic-002-243-237-193.2.243.pool.telefonica.de' (using password: YES)")
+[2025-10-01 10:51:49] MongoDB connection successful
+[2025-10-01 10:52:13] MongoDB get_client successful
+[2025-10-01 10:52:16] MongoDB get_client successful
+[2025-10-01 10:58:50] MySQL connection failed: (2003, "Can't connect to MySQL server on 'ich-db.edu.itcareerhubb.de' ([Errno 11001] getaddrinfo failed)")
+[2025-10-01 10:58:50] MongoDB connection successful
+[2025-10-01 10:59:20] MongoDB get_client successful
+[2025-10-01 10:59:30] MongoDB get_client successful
+[2025-10-01 11:00:06] MySQL connection successful
+[2025-10-01 11:00:06] MongoDB connection successful
+[2025-10-01 11:00:14] MongoDB get_client successful
+[2025-10-01 11:00:14] MySQL get_connection successful
+[2025-10-01 11:00:19] MySQL get_connection successful
+[2025-10-01 11:00:30] MongoDB get_client successful
+[2025-10-01 11:00:30] MySQL get_connection successful
+[2025-10-01 11:12:41] MySQL connection successful
+[2025-10-01 11:12:41] MongoDB connection failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:13:10] MongoDB get_client failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:13:10] MySQL get_connection successful
+[2025-10-01 11:13:23] MongoDB get_client failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:13:23] MySQL get_connection successful
+[2025-10-01 11:15:30] MySQL connection successful
+[2025-10-01 11:15:30] MongoDB connection failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:15:34] MySQL get_connection successful
+[2025-10-01 11:15:43] MongoDB get_client failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:15:43] MySQL get_connection successful
+[2025-10-01 11:15:58] MongoDB get_client failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:15:58] MySQL get_connection successful
+[2025-10-01 11:16:47] MySQL connection successful
+[2025-10-01 11:16:50] MongoDB connection failed: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 3.0s, Topology Description: <TopologyDescription id: 68dcf17ff389b039c4d31eb6, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 11:17:29] MongoDB get_client failed: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68dcf18af389b039c4d31eb7, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 11:17:29] MySQL get_connection successful
+[2025-10-01 11:17:40] MySQL get_connection successful
+[2025-10-01 11:18:18] MongoDB get_client failed: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 68dcf1bcf389b039c4d31eb8, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 11:18:18] MySQL get_connection successful
+[2025-10-01 11:20:12] MySQL connection successful
+[2025-10-01 11:20:13] MongoDB connection failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:20:20] MongoDB get_client failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:20:20] MySQL get_connection successful
+[2025-10-01 11:20:25] MySQL get_connection successful
+[2025-10-01 11:20:31] MongoDB get_client failed: Authentication failed., full error: {'ok': 0.0, 'errmsg': 'Authentication failed.', 'code': 18, 'codeName': 'AuthenticationFailed'}
+[2025-10-01 11:20:32] MySQL get_connection successful
+[2025-10-01 11:36:37] MySQL connection successful
+[2025-10-01 11:36:38] MongoDB connection successful
+[2025-10-01 11:36:45] MySQL connection successful
+[2025-10-01 11:36:45] MongoDB connection successful
+[2025-10-01 11:37:15] MongoDB get_client successful
+[2025-10-01 11:38:05] MySQL connection successful
+[2025-10-01 11:38:05] MongoDB connection successful
+[2025-10-01 11:38:07] MySQL get_connection successful
+[2025-10-01 11:38:15] MongoDB get_client successful
+[2025-10-01 11:38:21] MySQL connection successful
+[2025-10-01 11:38:22] MongoDB connection successful
+[2025-10-01 11:38:25] MongoDB get_client successful
+[2025-10-01 11:38:29] MongoDB get_client successful
+[2025-10-01 11:38:43] MongoDB get_client successful
+[2025-10-01 11:53:43] MySQL connection successful
+[2025-10-01 11:53:43] MongoDB connection successful
+[2025-10-01 11:53:49] MySQL connection successful
+[2025-10-01 11:53:50] MongoDB connection successful
+[2025-10-01 11:54:18] MongoDB get_client successful
+[2025-10-01 11:54:19] MongoDB get_client successful
+[2025-10-01 11:54:19] MySQL get_connection successful
+[2025-10-01 11:54:32] MongoDB get_client successful
+[2025-10-01 11:54:33] MongoDB get_client successful
+[2025-10-01 11:54:33] MySQL get_connection successful
+[2025-10-01 11:54:42] MySQL get_connection successful
+[2025-10-01 11:54:53] MongoDB get_client successful
+[2025-10-01 11:54:53] MongoDB get_client successful
+[2025-10-01 11:54:53] MySQL get_connection successful
+[2025-10-01 11:55:04] MongoDB get_client successful
+[2025-10-01 11:55:17] MongoDB get_client successful
+[2025-10-01 11:56:11] MySQL connection successful
+[2025-10-01 11:56:14] MongoDB connection failed: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 3.0s, Topology Description: <TopologyDescription id: 68dcfabba98083d63362e9cb, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 11:56:33] MongoDB connection timeout: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 68dcfacca98083d63362e9cc, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms)')>]>
+[2025-10-01 11:56:33] MySQL get_connection successful
+[2025-10-01 11:56:49] MySQL get_connection successful
+[2025-10-01 11:57:01] MongoDB connection timeout: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 68dcfae8a98083d63362e9cd, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms)')>]>
+[2025-10-01 11:57:01] MySQL get_connection successful
+[2025-10-01 11:58:10] MySQL connection failed: (2003, "Can't connect to MySQL server on 'ich-db.edu.itcareerhubb.de' ([Errno 11001] getaddrinfo failed)")
+[2025-10-01 11:58:10] MongoDB connection successful
+[2025-10-01 11:58:21] MongoDB get_client successful
+[2025-10-01 11:58:24] MongoDB get_client successful
+[2025-10-01 11:58:47] MySQL connection successful
+[2025-10-01 11:58:47] MongoDB connection successful
+[2025-10-01 11:58:55] MongoDB get_client successful
+[2025-10-01 11:58:55] MongoDB get_client successful
+[2025-10-01 11:58:55] MySQL get_connection successful
+[2025-10-01 11:59:06] MySQL get_connection successful
+[2025-10-01 11:59:13] MongoDB get_client successful
+[2025-10-01 11:59:13] MongoDB get_client successful
+[2025-10-01 11:59:13] MySQL get_connection successful
+[2025-10-01 11:59:19] MongoDB get_client successful
+[2025-10-01 11:59:26] MongoDB get_client successful
+[2025-10-01 12:12:45] MySQL connection successful
+[2025-10-01 12:12:45] MongoDB connection successful
+[2025-10-01 12:12:53] MySQL connection successful
+[2025-10-01 12:12:53] MongoDB connection successful
+[2025-10-01 12:13:11] MongoDB get_client successful
+[2025-10-01 12:13:11] MongoDB get_client successful
+[2025-10-01 12:13:12] MySQL get_connection successful
+[2025-10-01 12:13:17] MySQL get_connection successful
+[2025-10-01 12:13:25] MongoDB get_client successful
+[2025-10-01 12:13:25] MongoDB get_client successful
+[2025-10-01 12:13:25] MySQL get_connection successful
+[2025-10-01 12:13:42] MongoDB get_client successful
+[2025-10-01 12:13:45] MongoDB get_client successful
+[2025-10-01 14:48:42] MySQL connection successful
+[2025-10-01 14:48:42] MongoDB connection successful
+[2025-10-01 14:48:48] MySQL connection successful
+[2025-10-01 14:48:48] MongoDB connection successful
+[2025-10-01 14:49:16] MongoDB get_client successful
+[2025-10-01 14:49:17] MongoDB get_client successful
+[2025-10-01 14:49:17] MySQL get_connection successful
+[2025-10-01 14:49:44] MongoDB get_client successful
+[2025-10-01 14:49:44] MongoDB get_client successful
+[2025-10-01 14:49:44] MySQL get_connection successful
+[2025-10-01 14:49:53] MySQL get_connection successful
+[2025-10-01 14:50:00] MongoDB get_client successful
+[2025-10-01 14:50:00] MongoDB get_client successful
+[2025-10-01 14:50:00] MySQL get_connection successful
+[2025-10-01 14:50:07] MongoDB get_client successful
+[2025-10-01 14:50:18] MongoDB get_client successful
+[2025-10-01 14:50:39] MongoDB get_client successful
+[2025-10-01 14:50:56] MongoDB get_client successful
+[2025-10-01 14:52:27] MySQL connection failed: (2003, "Can't connect to MySQL server on 'ich-db.edu.itcareerhubb.de' ([Errno 11001] getaddrinfo failed)")
+[2025-10-01 14:52:27] MongoDB connection successful
+[2025-10-01 14:52:54] MongoDB get_client successful
+[2025-10-01 14:52:58] MongoDB get_client successful
+[2025-10-01 14:53:49] MySQL connection failed: (2003, "Can't connect to MySQL server on 'ich-db.edu.itcareerhubb.de' ([Errno 11001] getaddrinfo failed)")
+[2025-10-01 14:53:52] MongoDB connection failed: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 3.0s, Topology Description: <TopologyDescription id: 68dd245d8e9577e11a975baf, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 14:54:44] MySQL connection failed: (2003, "Can't connect to MySQL server on 'ich-db.edu.itcareerhubb.de' ([Errno 11001] getaddrinfo failed)")
+[2025-10-01 14:54:45] MongoDB connection successful
+[2025-10-01 14:55:01] MongoDB get_client successful
+[2025-10-01 14:55:05] MongoDB get_client successful
+[2025-10-01 14:55:35] MySQL connection successful
+[2025-10-01 14:55:38] MongoDB connection failed: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 3.0s, Topology Description: <TopologyDescription id: 68dd24c7570716ff5b56eaa7, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+[2025-10-01 14:55:59] MongoDB connection timeout: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 68dd24da570716ff5b56eaa8, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms)')>]>
+[2025-10-01 14:55:59] MySQL get_connection successful
+[2025-10-01 14:56:10] MySQL get_connection successful
+[2025-10-01 14:56:26] MongoDB connection timeout: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 68dd24f5570716ff5b56eaa9, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms)')>]>
+[2025-10-01 14:56:26] MySQL get_connection successful
+[2025-10-01 14:57:23] MongoDB connection timeout: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 68dd252e570716ff5b56eaaa, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms)')>]>
+[2025-10-01 14:57:23] MySQL get_connection successful
+[2025-10-01 14:57:27] MySQL get_connection successful
+[2025-10-01 14:58:13] MongoDB connection timeout: mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 68dd2560570716ff5b56eaab, topology_type: Unknown, servers: [<ServerDescription ('mmongo.itcareerhub.de', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('mmongo.itcareerhub.de:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 5000.0ms, connectTimeoutMS: 5000.0ms)')>]>
+[2025-10-01 14:58:13] MySQL get_connection successful
+[2025-10-01 14:58:56] MySQL connection successful
+[2025-10-01 14:58:56] MongoDB connection successful
+[2025-10-01 14:59:07] MongoDB get_client successful
+[2025-10-01 14:59:07] MongoDB get_client successful
+[2025-10-01 14:59:07] MySQL get_connection successful
+[2025-10-01 14:59:13] MySQL get_connection successful
+[2025-10-01 14:59:28] MongoDB get_client successful
+[2025-10-01 14:59:28] MongoDB get_client successful
+[2025-10-01 14:59:28] MySQL get_connection successful
+[2025-10-01 14:59:42] MongoDB get_client successful
+[2025-10-01 14:59:57] MongoDB get_client successful
+[2025-10-01 15:02:56] MySQL connection successful
+[2025-10-01 15:02:57] MongoDB connection successful
+[2025-10-01 15:03:38] MongoDB get_client successful
+[2025-10-01 15:03:38] MongoDB get_client successful
+[2025-10-01 15:03:38] MySQL get_connection successful
+[2025-10-01 15:03:43] MySQL get_connection successful
+[2025-10-01 15:04:02] MongoDB get_client successful
+[2025-10-01 15:04:02] MongoDB get_client successful
+[2025-10-01 15:04:02] MySQL get_connection successful
+[2025-10-01 15:04:10] MongoDB get_client successful
+[2025-10-01 15:04:13] MongoDB get_client successful
+[2025-10-01 15:05:08] MySQL connection successful
+[2025-10-01 15:05:09] MongoDB connection successful
+[2025-10-01 15:07:26] MongoDB get_client successful
+[2025-10-01 15:07:26] MongoDB get_client successful
+[2025-10-01 15:07:26] MySQL get_connection successful
+[2025-10-01 15:07:32] MySQL get_connection successful
+[2025-10-01 15:07:41] MongoDB get_client successful
+[2025-10-01 15:07:41] MongoDB get_client successful
+[2025-10-01 15:07:41] MySQL get_connection successful
+[2025-10-01 15:07:55] MySQL connection successful
+[2025-10-01 15:07:55] MongoDB connection successful
+[2025-10-01 15:10:43] MySQL connection successful
+[2025-10-01 15:10:43] MongoDB connection successful
+[2025-10-01 15:11:23] MongoDB get_client successful
+[2025-10-01 15:11:23] MongoDB get_client successful
+[2025-10-01 15:11:23] MySQL get_connection successful
