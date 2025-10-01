@@ -69,8 +69,8 @@ def get_mongo_client():
     try:
         client = MongoClient(
             MONGO_URI,
-            serverSelectionTimeoutMS=5000,
-            connectTimeoutMS=5000
+            serverSelectionTimeoutMS=5000,           # 5s max to select MongoDB server
+            connectTimeoutMS=5000                    # 5s max for TCP connection setup
         )
         client.admin.command('ping')
         write_log("MongoDB get_client successful")

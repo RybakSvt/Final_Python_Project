@@ -24,9 +24,7 @@ def print_menu():
 
 
 def handle_mysql_option(choice):
-    """
-    Handle movie search options (1-2).
-    """
+    """ Handle movie search options (1-2). """
     if not cm.mysql_available:
         msg = f"{RED}⏳ Search temporarily unavailable... (Menu 1-2){RESET}"
         print(msg)
@@ -39,9 +37,7 @@ def handle_mysql_option(choice):
 
 
 def handle_mongo_option(choice):
-    """
-    Handle search statistics options (3-4).
-    """
+    """ Handle search statistics options (3-4). """
     if not cm.mongo_available:
         msg = f"{RED}⏳ Search history unavailable... (Menu 3-4){RESET}"
         print(msg)
@@ -54,9 +50,7 @@ def handle_mongo_option(choice):
 
 
 def handle_invalid_input(choice):
-    """
-    Handle invalid user input.
-    """
+    """ Handle invalid user input. """
     if choice == "":
         print("👉 You pressed Enter. Please choose between 0 and 4")
     else:
