@@ -3,9 +3,40 @@ import formatter
 import log_writer
 import connection_manager
 
+# SQL queries as constants
+GENRES_YEARS_QUERY = """
+SELECT c.name AS category_name,
+       MIN(f.release_year) AS min_release_year,
+       MAX(f.release_year) AS max_release_year
+FROM film AS f
+JOIN film_category AS fc ON f.film_id = fc.film_id
+JOIN category AS c ON fc.category_id = c.category_id
+GROUP BY c.name
+ORDER BY c.name
+"""
+
+KEYWORD_SEARCH_QUERY = """
+SELECT title, release_year, name, description
+FROM film AS f
+JOIN film_category AS fc ON f.film_id = fc.film_id
+JOIN category AS c ON fc.category_id = c.category_id
+WHERE title LIKE %(keyword)s
+ORDER BY title ASC
+"""
+
+MOVIES_BY_GENRE_YEAR_QUERY = """
+SELECT f.title, f.release_year, c.name AS genre, f.description
+FROM film AS f
+JOIN film_category AS fc ON f.film_id = fc.film_id
+JOIN category AS c ON fc.category_id = c.category_id
+WHERE c.name = %(genre)s
+  AND f.release_year BETWEEN %(start_year)s AND %(end_year)s
+ORDER BY f.title ASC
+"""
+
 
 def execute_query(query, params=None):
-    """Выполняет SQL запрос и возвращает курсор"""
+    """Execute SQL query and return cursor."""
     connection = connection_manager.get_mysql_connection()
     if connection is None:
         return None, None
@@ -21,43 +52,25 @@ def execute_query(query, params=None):
 
 
 def search_by_keyword():
+    """Search movies by keyword."""
     keyword = input("Enter keyword for search: ")
     log_writer.write_search_log("keyword", keyword=keyword)
 
-    query = """
-            SELECT title, release_year, name, description
-            FROM film AS f
-                     JOIN film_category AS fc ON f.film_id = fc.film_id
-                     JOIN category AS c ON fc.category_id = c.category_id
-            WHERE title LIKE %(keyword)s
-            ORDER BY title ASC 
-            """
-
-    connection, cursor = execute_query(query, {"keyword": f"%{keyword}%"})
-
+    connection, cursor = execute_query(
+        KEYWORD_SEARCH_QUERY,
+        {"keyword": f"%{keyword}%"}
+    )
     if cursor is None:
         return
 
     formatter.print_movies_table(cursor)
     cursor.close()
     connection.close()
-    return
 
 
 def search_by_genre_and_years():
-    query = """
-            SELECT c.name              AS category_name,
-                   MIN(f.release_year) AS min_release_year,
-                   MAX(f.release_year) AS max_release_year
-            FROM film AS f
-                     JOIN film_category AS fc ON f.film_id = fc.film_id
-                     JOIN category AS c ON fc.category_id = c.category_id
-            GROUP BY c.name
-            ORDER BY c.name 
-            """
-
-    connection, cursor = execute_query(query)
-
+    """Search movies by genre and year range."""
+    connection, cursor = execute_query(GENRES_YEARS_QUERY)
     if cursor is None:
         return
 
@@ -66,41 +79,39 @@ def search_by_genre_and_years():
     connection.close()
 
     selected_genre = get_genre_by_prefix(genres_dict)
-
     if selected_genre is None:
-        return  # пользователь нажал Enter
+        return
 
-    min_year = genres_dict[selected_genre][0]
-    max_year = genres_dict[selected_genre][1]
+    start_year, end_year = _get_validated_years(genres_dict, selected_genre)
+    _show_movies_by_genre_years(selected_genre, start_year, end_year)
+
+
+def _get_validated_years(genres_dict, selected_genre):
+    """Get and validate year input from user."""
+    min_year, max_year = genres_dict[selected_genre]
 
     while True:
-        years_input = input(f"Enter year or range ({min_year} - {max_year}): ").strip()
+        years_input = input(
+            f"Enter year or range ({min_year} - {max_year}): "
+        ).strip()
         years, error = validate_years(years_input, min_year, max_year)
 
         if error:
             print(f" {error}")
             continue
 
-        start_year, end_year = years
-        break
+        log_writer.write_search_log(
+            "genre_years",
+            genre=selected_genre,
+            years=years_input
+        )
+        return years
 
-    log_writer.write_search_log("genre_years", genre=selected_genre, years=years_input)
 
-    movies_query = """
-                   SELECT f.title,
-                          f.release_year,
-                          c.name AS genre,
-                          f.description
-                   FROM film AS f
-                            JOIN film_category AS fc ON f.film_id = fc.film_id
-                            JOIN category AS c ON fc.category_id = c.category_id
-                   WHERE c.name = %(genre)s
-                     AND f.release_year BETWEEN %(start_year)s AND %(end_year)s
-                   ORDER BY f.title ASC 
-                   """
-
-    connection, cursor = execute_query(movies_query, {
-        "genre": selected_genre,
+def _show_movies_by_genre_years(genre, start_year, end_year):
+    """Search and display movies by genre and years."""
+    connection, cursor = execute_query(MOVIES_BY_GENRE_YEAR_QUERY, {
+        "genre": genre,
         "start_year": start_year,
         "end_year": end_year
     })
@@ -112,9 +123,11 @@ def search_by_genre_and_years():
 
 
 def get_genre_by_prefix(genres_dict):
-    """Получает жанр по первым 3 буквам (и более) с проверкой ввода"""
+    """Get genre by first 3 letters with input validation."""
     while True:
-        genre = input("Enter first 3 letters of genre (or Enter to return): ").strip()
+        genre = input(
+            "Enter first 3 letters of genre (or Enter to return): "
+        ).strip()
         if genre == "":
             return None
         if len(genre) < 3:
@@ -122,7 +135,10 @@ def get_genre_by_prefix(genres_dict):
             continue
 
         genre_prefix = genre[:3].lower()
-        matching_genres = [key for key in genres_dict.keys() if key[:3].lower() == genre_prefix]
+        matching_genres = [
+            key for key in genres_dict.keys()
+            if key[:3].lower() == genre_prefix
+        ]
 
         if not matching_genres:
             print(f"No genres found starting with '{genre_prefix}'")
@@ -133,7 +149,7 @@ def get_genre_by_prefix(genres_dict):
 
 
 def validate_years(input_years, min_year, max_year):
-    """Проверяет и преобразует ввод года/диапазона"""
+    """Validate and parse year/range input."""
     input_years = input_years.replace(" ", "")
 
     if '-' in input_years:
@@ -170,5 +186,4 @@ def validate_years(input_years, min_year, max_year):
             return None, f"Year must be between {min_year} and {max_year}"
 
         return (year, year), None
-
 

@@ -4,11 +4,11 @@ import dotenv
 from pathlib import Path
 from pymongo import MongoClient
 from datetime import datetime
-from pymongo import errors
 
-
+# Load environment variables once
 dotenv.load_dotenv(Path('.env'))
 
+# Database configuration
 MYSQL_CONFIG = {
     'host': os.environ.get('HOST'),
     'user': os.environ.get('USER'),
@@ -20,63 +20,66 @@ MONGO_URI = os.environ.get("MONGO_URI")
 MONGO_DB = os.environ.get("MONGO_DB")
 MONGO_COLLECTION = os.environ.get("MONGO_COLLECTION")
 
-def _write_log(message):
-    """Записывает сообщение в лог-файл"""
+
+def write_log(message):
+    """Write message to log file."""
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("db_connections.log", 'a', encoding='utf-8') as f:
         f.write(f"[{timestamp}] {message}\n")
 
+
 def check_mysql_connection():
+    """Check if MySQL is available."""
     try:
         connection = pymysql.connect(**MYSQL_CONFIG)
         connection.close()
-        _write_log("MySQL connection successful")
+        write_log("MySQL connection successful")
         return True
     except pymysql.Error as e:
-        _write_log(f"MySQL connection failed: {e}")
+        write_log(f"MySQL connection failed: {e}")
         return False
 
+
 def check_mongo_connection():
+    """Check if MongoDB is available."""
     try:
         client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=3000)
         client.admin.command('ping')
         client.close()
-        _write_log("MongoDB connection successful")
+        write_log("MongoDB connection successful")
         return True
     except Exception as e:
-        _write_log(f"MongoDB connection failed: {e}")
+        write_log(f"MongoDB connection failed: {e}")
         return False
 
+
 def get_mysql_connection():
+    """Get MySQL connection for queries."""
     try:
         connection = pymysql.connect(**MYSQL_CONFIG)
-        _write_log("MySQL get_connection successful")
+        write_log("MySQL get_connection successful")
         return connection
     except pymysql.Error as e:
-        _write_log(f"MySQL get_connection failed: {e}")
+        write_log(f"MySQL get_connection failed: {e}")
         return None
 
+
 def get_mongo_client():
+    """Get MongoDB client for queries."""
     try:
         client = MongoClient(
             MONGO_URI,
             serverSelectionTimeoutMS=5000,
-            connectTimeoutMS=5000,
-            socketTimeoutMS=5000
+            connectTimeoutMS=5000
         )
         client.admin.command('ping')
-        _write_log("MongoDB get_client successful")
+        write_log("MongoDB get_client successful")
         return client
-    except errors.ServerSelectionTimeoutError as e:
-        _write_log(f"MongoDB connection timeout: {e}")
-        return None
-    except errors.ConnectionFailure as e:
-        _write_log(f"MongoDB connection failed: {e}")
-        return None
-    except errors.PyMongoError as e:
-        _write_log(f"MongoDB error: {e}")
+    except Exception as e:
+        write_log(f"MongoDB get_client failed: {e}")
         return None
 
-# Глобальные переменные доступности
+
+# Check database availability on startup
 mysql_available = check_mysql_connection()
 mongo_available = check_mongo_connection()

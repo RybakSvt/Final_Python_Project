@@ -1,22 +1,19 @@
-from pymongo import errors
 from datetime import datetime
 import connection_manager
 
 
 def write_search_log(search_type, keyword=None, genre=None, years=None):
+    """
+    Save search history to MongoDB.
+    Works silently - no errors if database is unavailable.
+    """
     client = connection_manager.get_mongo_client()
     if client is None:
-        return  # выход если MongoDB недоступна
+        return
 
     try:
-        client = connection_manager.get_mongo_client()
-        if client is None:
-            return
-
-        db_name = client[connection_manager.MONGO_DB]
-        logs = db_name[connection_manager.MONGO_COLLECTION]
-
-        log = {
+        # Prepare log data
+        log_data = {
             "timestamp": datetime.now(),
             "search_type": search_type,
             "params": {
@@ -26,17 +23,17 @@ def write_search_log(search_type, keyword=None, genre=None, years=None):
             }
         }
 
-        logs.insert_one(log)
+        # Save to database
+        db = client[connection_manager.MONGO_DB]
+        collection = db[connection_manager.MONGO_COLLECTION]
+        collection.insert_one(log_data)
 
-    except errors.PyMongoError:
-        pass     # Игнорируем ошибки MongoDB
     except Exception:
-        pass     # Игнорируем все остальные ошибки
+        pass
     finally:
         try:
             client.close()
         except:
             pass
-
 
 
